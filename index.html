@@ -1,12 +1,76 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>準備中</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Noope - ホーム</title>
+  <link rel="stylesheet" href="./style.css">
 </head>
-<body style="font-family:sans-serif;text-align:center;margin-top:30vh">
-<h1>準備中</h1>
-<p>このページは、チームのアプリを公開すると入れ替わります。</p>
+<body>
+  <div class="app-container">
+    <!-- Status Bar -->
+    <div class="status-bar">
+      <span>9:30</span>
+      <div class="status-bar-icons">
+        <span>5G</span>
+        <span>100%</span>
+      </div>
+    </div>
+
+    <!-- Header -->
+    <div class="app-header">
+      <h1>Noope</h1>
+    </div>
+
+    <!-- Main Content -->
+    <div class="app-content">
+      <!-- Section: Currently Requested Jobs -->
+      <div>
+        <h2 style="font-size: 14px; font-weight: 700; color: var(--text-secondary); margin-bottom: 8px;">現在依頼している仕事</h2>
+        <a href="./job-requested.html" class="card card-interactive">
+          <div class="card-title">果樹園での収穫補助・運搬アシスト</div>
+          <div class="card-meta">
+            <div class="meta-row">📍 場所: サンプル県サンプル町1-1 サンプル農園</div>
+            <div class="meta-row">📅 期間: 2026年11月10日 〜 2026年11月15日</div>
+            <div class="meta-row price-tag">時給 1,200円</div>
+          </div>
+        </a>
+      </div>
+
+      <!-- Section: Currently Accepted Jobs -->
+      <div>
+        <h2 style="font-size: 14px; font-weight: 700; color: var(--text-secondary); margin-bottom: 8px;">現在受けている仕事</h2>
+        <a href="./job-accepted.html" class="card card-interactive">
+          <div class="card-title">収穫作業および収穫物の運搬補助</div>
+          <div class="card-meta">
+            <div class="meta-row">📍 場所: サンプル県サンプル町1-1 サンプル農園</div>
+            <div class="meta-row">📅 期間: 2026年11月10日 〜 2026年11月15日</div>
+            <div class="meta-row price-tag">時給 1,200円</div>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <!-- Bottom Navigation -->
+    <nav class="bottom-nav">
+      <a href="./index.html" class="nav-item active">
+        <div class="img-box icon-box"><img src="./images/icon-home.png" alt="ホーム"></div>
+        <span>ホーム</span>
+      </a>
+      <a href="./search.html" class="nav-item">
+        <div class="img-box icon-box"><img src="./images/icon-search.png" alt="検索"></div>
+        <span>検索</span>
+      </a>
+      <a href="./job-create.html" class="nav-item">
+        <div class="img-box icon-box"><img src="./images/icon-create.png" alt="仕事依頼"></div>
+        <span>仕事依頼</span>
+      </a>
+      <a href="./account.html" class="nav-item">
+        <div class="img-box icon-box"><img src="./images/icon-profile.png" alt="プロフィール"></div>
+        <span>プロフィール</span>
+      </a>
+    </nav>
+  </div>
+  <script src="./script.js"></script>
 </body>
 </html>

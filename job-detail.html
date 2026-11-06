@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Noope - 仕事詳細</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Status Bar -->
+    <div class="status-bar">
+      <span>9:30</span>
+      <div class="status-bar-icons">
+        <span>5G</span>
+        <span>100%</span>
+      </div>
+    </div>
+
+    <!-- Header -->
+    <div class="app-header">
+      <a href="./search.html" class="icon-btn" aria-label="仕事検索画面に戻る">
+        <div class="img-box icon-box"><img src="./images/icon-back.png" alt="＜"></div>
+        <span style="font-weight:600; font-size:14px; margin-left:4px;">戻る</span>
+      </a>
+      <h1 style="font-size: 16px;">仕事の詳細</h1>
+      <div style="width: 40px;"></div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="app-content">
+      <!-- Main Photo -->
+      <div class="img-box" style="height: 180px;">
+        <img src="./images/job-main.png" alt="仕事メイン写真">
+      </div>
+
+      <!-- Job Title & Price -->
+      <div class="card">
+        <h2 class="card-title" style="font-size: 17px;">収穫作業および収穫物の運搬補助（未経験者歓迎）</h2>
+        <div class="price-tag" style="font-size: 20px;">時給 1,200円</div>
+      </div>
+
+      <!-- Job Details -->
+      <div class="card">
+        <h3 style="font-size: 14px; color: var(--text-secondary);">仕事の詳細</h3>
+        <p style="font-size: 14px; line-height: 1.5;">収穫作業および収穫物の運搬補助（未経験者歓迎）。初心者の方でも丁寧に指導いたします。</p>
+      </div>
+
+      <!-- Requester Comment -->
+      <div class="card">
+        <h3 style="font-size: 14px; color: var(--text-secondary);">依頼者からのコメント</h3>
+        <p style="font-size: 14px; line-height: 1.5;">収穫時期の繁忙期のため手伝っていただける方を募集します。農機具貸出も対応可能です。</p>
+      </div>
+
+      <!-- Location & Period -->
+      <div class="card">
+        <h3 style="font-size: 14px; color: var(--text-secondary);">勤務情報・マップ</h3>
+        <div class="card-meta">
+          <div class="meta-row">📍 <strong>場所:</strong> サンプル県サンプル町1-1 サンプル農園</div>
+          <div class="meta-row">📅 <strong>期間:</strong> 2026年11月10日 〜 2026年11月15日</div>
+        </div>
+        <div class="map-container" style="margin-top: 8px;">
+          <img src="./images/map-sample.png" alt="サンプル地図">
+        </div>
+      </div>
+
+      <!-- Action Button -->
+      <div style="padding: 10px 0;">
+        <a href="./index.html" class="btn-primary" onclick="alert('仕事を受注しました！')">仕事の受注</a>
+      </div>
+    </div>
+
+    <!-- Bottom Navigation -->
+    <nav class="bottom-nav">
+      <a href="./index.html" class="nav-item">
+        <div class="img-box icon-box"><img src="./images/icon-home.png" alt="ホーム"></div>
+        <span>ホーム</span>
+      </a>
+      <a href="./search.html" class="nav-item active">
+        <div class="img-box icon-box"><img src="./images/icon-search.png" alt="検索"></div>
+        <span>検索</span>
+      </a>
+      <a href="./job-create.html" class="nav-item">
+        <div class="img-box icon-box"><img src="./images/icon-create.png" alt="仕事依頼"></div>
+        <span>仕事依頼</span>
+      </a>
+      <a href="./account.html" class="nav-item">
+        <div class="img-box icon-box"><img src="./images/icon-profile.png" alt="プロフィール"></div>
+        <span>プロフィール</span>
+      </a>
+    </nav>
+  </div>
+  <script src="./script.js"></script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Noope - 設定</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Status Bar -->
+    <div class="status-bar">
+      <span>9:30</span>
+      <div class="status-bar-icons">
+        <span>5G</span>
+        <span>100%</span>
+      </div>
+    </div>
+
+    <!-- Header -->
+    <div class="app-header">
+      <a href="./account.html" class="icon-btn" aria-label="アカウント画面に戻る">
+        <div class="img-box icon-box"><img src="./images/icon-back.png" alt="＜"></div>
+        <span style="font-weight:600; font-size:14px; margin-left:4px;">アカウント</span>
+      </a>
+      <h1 style="font-size: 16px;">設定</h1>
+      <div style="width: 40px;"></div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="app-content">
+      <!-- Search Bar -->
+      <div class="search-container">
+        <div class="img-box icon-box" style="width: 16px; height: 16px;"><img src="./images/icon-search.png" alt="検索"></div>
+        <input type="text" class="search-input" placeholder="設定項目を検索">
+        <button class="search-clear">×</button>
+      </div>
+
+      <!-- Settings Menu List -->
+      <div class="settings-list">
+        <div class="setting-item" onclick="showToast('アカウント情報設定')">アカウント情報</div>
+        <div class="setting-item" onclick="showToast('音量設定')">音量</div>
+        <div class="setting-item" onclick="showToast('ビデオ設定')">ビデオ</div>
+        <div class="setting-item" onclick="showToast('インターフェイス設定')">インターフェイス</div>
+        <div class="setting-item" onclick="showToast('言語設定')">言語</div>
+        <div class="setting-item" onclick="showToast('ホーム画面設定')">ホーム画面設定</div>
+        <div class="setting-item" onclick="showToast('ブロック・報告')">ブロック・報告</div>
+        <div class="setting-item" onclick="showToast('利用規約 / アカウントポリシー')">利用規約 / アカウントポリシー</div>
+      </div>
+    </div>
+
+    <!-- Bottom Navigation -->
+    <nav class="bottom-nav">
+      <a href="./index.html" class="nav-item">
+        <div class="img-box icon-box"><img src="./images/icon-home.png" alt="ホーム"></div>
+        <span>ホーム</span>
+      </a>
+      <a href="./search.html" class="nav-item">
+        <div class="img-box icon-box"><img src="./images/icon-search.png" alt="検索"></div>
+        <span>検索</span>
+      </a>
+      <a href="./job-create.html" class="nav-item">
+        <div class="img-box icon-box"><img src="./images/icon-create.png" alt="仕事依頼"></div>
+        <span>仕事依頼</span>
+      </a>
+      <a href="./account.html" class="nav-item active">
+        <div class="img-box icon-box"><img src="./images/icon-profile.png" alt="プロフィール"></div>
+        <span>プロフィール</span>
+      </a>
+    </nav>
+  </div>
+  <script src="./script.js"></script>
+</body>
+</html>

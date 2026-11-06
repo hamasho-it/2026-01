@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Noope - 仕事依頼</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Status Bar -->
+    <div class="status-bar">
+      <span>9:30</span>
+      <div class="status-bar-icons">
+        <span>5G</span>
+        <span>100%</span>
+      </div>
+    </div>
+
+    <!-- Header -->
+    <div class="app-header">
+      <h1>仕事依頼の作成</h1>
+    </div>
+
+    <!-- Main Content Form -->
+    <div class="app-content">
+      <!-- Photo Input Area -->
+      <div class="form-group">
+        <label class="form-label">写真入力</label>
+        <div class="img-box" style="height: 120px; border: 2px dashed #cbd5e0; background-color: #f8fafc; cursor: pointer;" onclick="alert('画像を選択・アップロードするダイアログが開きます。')">
+          <span style="font-size: 13px; color: #64748b;">📷 タップして仕事の写真をアップロード</span>
+        </div>
+      </div>
+
+      <!-- Job Details Input -->
+      <div class="form-group">
+        <label class="form-label">仕事の詳細</label>
+        <textarea class="form-control" placeholder="仕事の内容を入力してください">収穫作業および収穫物の運搬補助（未経験者歓迎）</textarea>
+      </div>
+
+      <!-- Comment Input -->
+      <div class="form-group">
+        <label class="form-label">コメント</label>
+        <textarea class="form-control" placeholder="応募者への補足コメントを入力してください">収穫時期の繁忙期のため手伝っていただける方を募集します。農機具貸出も対応可能です。</textarea>
+      </div>
+
+      <!-- Location Setting Area -->
+      <div class="form-group">
+        <label class="form-label">仕事場所設定</label>
+        <input type="text" class="form-control" value="サンプル県サンプル町1-1 サンプル農園">
+        <button type="button" class="btn-secondary" style="margin-top: 6px;" onclick="alert('地図から位置を指定できます。')">地図設定</button>
+      </div>
+
+      <!-- Map Display Area -->
+      <div class="map-container">
+        <img src="./images/map-sample.png" alt="サンプル地図">
+      </div>
+
+      <!-- Period Input -->
+      <div class="form-group">
+        <label class="form-label">仕事の期間</label>
+        <input type="text" class="form-control" value="2026年11月10日 〜 2026年11月15日">
+      </div>
+
+      <!-- Hourly Rate Input -->
+      <div class="form-group">
+        <label class="form-label">時給設定</label>
+        <input type="text" class="form-control" value="1,200円">
+      </div>
+
+      <!-- Submit Button -->
+      <div style="padding: 10px 0 20px 0;">
+        <a href="./index.html" class="btn-primary" onclick="alert('仕事の依頼を決定・投稿しました！')">仕事の依頼決定</a>
+      </div>
+    </div>
+
+    <!-- Bottom Navigation -->
+    <nav class="bottom-nav">
+      <a href="./index.html" class="nav-item">
+        <div class="img-box icon-box"><img src="./images/icon-home.png" alt="ホーム"></div>
+        <span>ホーム</span>
+      </a>
+      <a href="./search.html" class="nav-item">
+        <div class="img-box icon-box"><img src="./images/icon-search.png" alt="検索"></div>
+        <span>検索</span>
+      </a>
+      <a href="./job-create.html" class="nav-item active">
+        <div class="img-box icon-box"><img src="./images/icon-create.png" alt="仕事依頼"></div>
+        <span>仕事依頼</span>
+      </a>
+      <a href="./account.html" class="nav-item">
+        <div class="img-box icon-box"><img src="./images/icon-profile.png" alt="プロフィール"></div>
+        <span>プロフィール</span>
+      </a>
+    </nav>
+  </div>
+  <script src="./script.js"></script>
+</body>
+</html>

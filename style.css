@@ -1,17 +1,29 @@
 /* Noope (ヌープ) - Common Stylesheet */
 :root {
-  --primary-color: #2e7d32;
-  --primary-hover: #1b5e20;
-  --bg-color: #f5f7f8;
-  --card-bg: #ffffff;
-  --text-primary: #1a1a1a;
-  --text-secondary: #666666;
-  --border-color: #e0e0e0;
-  --gray-placeholder: #e2e8f0;
-  --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
-  --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
-  --radius: 12px;
-  --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  /* デザインルール指定カラー */
+  --primary-color: #7CB342;       /* メインの色（見出し・上の帯） */
+  --primary-dark: #689F38;        /* メイン色のホバー・濃色アクセント */
+  --primary-light: #F1F8E9;       /* 農業の爽やかさを添える淡いグリーン背景 */
+  --accent-color: #EA5D5D;        /* 強調の色（主なボタン） */
+  --accent-hover: #D64545;        /* 強調ボタンのタップ・ホバー時 */
+  --bg-color: #FFFFFF;            /* 背景の色 */
+  --text-primary: #1B3B1A;        /* 文字の色 */
+
+  /* 補助カラー・UI用変数 */
+  --text-secondary: #4A6B49;      /* 補足テキスト（文字色と調和する深い緑） */
+  --text-on-color: #FFFFFF;       /* メイン色・強調色の上の白文字 */
+  --surface-subtle: #F7FAF5;      /* 検索バーや入力欄などのごく淡い背景 */
+  --border-color: #DCE7D5;        /* ナチュラルな境界線 */
+  --gray-placeholder: #EDF4E8;    /* 画像未設定時の背景 */
+  --outer-bg: #EEF4EA;            /* PC表示時の外側背景 */
+
+  /* 影・角丸・フォント */
+  --shadow-sm: 0 2px 8px rgba(27, 59, 26, 0.06);
+  --shadow-md: 0 6px 16px rgba(27, 59, 26, 0.12);
+  --shadow-accent: 0 4px 12px rgba(234, 93, 93, 0.3);
+  --radius: 16px;
+  --radius-pill: 9999px;
+  --font-family: -apple-system, BlinkMacSystemFont, "Hiragino Maru Gothic ProN", "Segoe UI", Roboto, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif;
 }
 
 * {
@@ -23,12 +35,27 @@
 }
 
 body {
-  background-color: #e9ecef;
+  background-color: var(--outer-bg);
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
   color: var(--text-primary);
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* Material Symbols / 絵文字アイコン共通調整 */
+.material-symbols-outlined,
+.material-symbols-rounded,
+.icon-emoji {
+  font-size: 22px;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+  flex-shrink: 0;
 }
 
 /* Mobile Frame Container */
@@ -36,107 +63,138 @@ body {
   width: 100%;
   max-width: 420px;
   height: 100vh;
+  height: 100dvh;
   max-height: 880px;
   background-color: var(--bg-color);
   position: relative;
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  box-shadow: 0 12px 30px rgba(27, 59, 26, 0.14);
   border-radius: 0;
 }
 
 @media (min-width: 440px) {
   .app-container {
     height: 850px;
-    border-radius: 28px;
-    border: 8px solid #333333;
+    border-radius: 32px;
+    border: 8px solid var(--text-primary);
   }
 }
 
-/* Status Bar */
+/* Status Bar（上の帯の一部としてメイン色に統一） */
 .status-bar {
   height: 44px;
-  background-color: var(--card-bg);
+  background-color: var(--primary-color);
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 20px;
   font-size: 14px;
-  font-weight: 600;
-  color: var(--text-primary);
-  border-bottom: 1px solid rgba(0,0,0,0.05);
+  font-weight: 700;
+  color: var(--text-on-color);
   z-index: 10;
   flex-shrink: 0;
 }
 
 .status-bar-icons {
   display: flex;
-  gap: 6px;
+  gap: 8px;
   align-items: center;
-  font-size: 12px;
+  font-size: 14px;
 }
 
-/* Header Area */
+/* Header Area（上の帯・見出し） */
 .app-header {
-  background-color: var(--card-bg);
-  padding: 14px 20px;
+  background-color: var(--primary-color);
+  padding: 12px 16px 16px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid var(--border-color);
+  color: var(--text-on-color);
+  box-shadow: 0 2px 8px rgba(124, 179, 66, 0.25);
   z-index: 9;
   flex-shrink: 0;
 }
 
 .app-header h1 {
-  font-size: 18px;
-  font-weight: 700;
-  color: var(--text-primary);
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  color: var(--text-on-color);
 }
 
 .header-actions {
   display: flex;
-  gap: 12px;
+  gap: 8px;
   align-items: center;
 }
 
 .icon-btn {
-  background: none;
+  background: rgba(255, 255, 255, 0.18);
   border: none;
   cursor: pointer;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 6px;
-  border-radius: 50%;
-  transition: background-color 0.2s;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 8px;
+  border-radius: var(--radius-pill);
+  transition: background-color 0.2s, transform 0.1s;
   text-decoration: none;
-  color: var(--text-primary);
+  color: var(--text-on-color);
+  font-size: 20px;
 }
 
-.icon-btn:hover {
-  background-color: rgba(0,0,0,0.05);
+.icon-btn:active {
+  background-color: rgba(255, 255, 255, 0.32);
+  transform: scale(0.95);
 }
 
 /* Main Content Area */
 .app-content {
   flex: 1;
   overflow-y: auto;
-  padding: 16px;
+  -webkit-overflow-scrolling: touch;
+  padding: 18px 16px 24px;
+  background-color: var(--bg-color);
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 18px;
+  font-size: 16px;
+}
+
+.app-content h2,
+.app-content h3 {
+  color: var(--primary-dark);
+  font-weight: 800;
+  line-height: 1.4;
+}
+
+.app-content h2 {
+  font-size: 19px;
+}
+
+.app-content h3 {
+  font-size: 17px;
+}
+
+.app-content p {
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--text-primary);
 }
 
 /* Bottom Navigation */
 .bottom-nav {
-  height: 64px;
-  background-color: var(--card-bg);
-  border-top: 1px solid var(--border-color);
+  height: 68px;
+  background-color: var(--bg-color);
+  border-top: 2px solid var(--border-color);
   display: flex;
   justify-content: space-around;
   align-items: center;
+  padding: 4px 8px;
   z-index: 10;
   flex-shrink: 0;
 }
@@ -148,21 +206,24 @@ body {
   justify-content: center;
   text-decoration: none;
   color: var(--text-secondary);
-  font-size: 11px;
+  font-size: 12px;
+  font-weight: 600;
   gap: 3px;
   width: 25%;
-  height: 100%;
-  transition: color 0.2s;
+  min-height: 48px;
+  border-radius: var(--radius);
+  transition: color 0.2s, background-color 0.2s;
 }
 
 .nav-item.active {
-  color: var(--primary-color);
-  font-weight: 700;
+  color: var(--primary-dark);
+  background-color: var(--primary-light);
+  font-weight: 800;
 }
 
 .nav-item img {
-  width: 22px;
-  height: 22px;
+  width: 24px;
+  height: 24px;
   object-fit: contain;
 }
 
@@ -176,7 +237,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 120px;
+  min-height: 140px;
 }
 
 .img-box img {
@@ -186,12 +247,12 @@ body {
   display: block;
 }
 
-/* Fallback Gray Box Display */
+/* Fallback Display */
 .img-box::before {
-  content: "No Image";
-  color: #888;
-  font-size: 13px;
-  font-weight: 500;
+  content: "🌱 No Image";
+  color: var(--text-secondary);
+  font-size: 16px;
+  font-weight: 600;
   position: absolute;
 }
 
@@ -206,41 +267,44 @@ body {
   height: 24px;
   background: transparent;
 }
+
 .img-box.icon-box::before {
   content: "";
 }
 
 /* UI Cards */
 .card {
-  background-color: var(--card-bg);
+  background-color: var(--bg-color);
   border-radius: var(--radius);
-  padding: 16px;
+  padding: 18px;
   box-shadow: var(--shadow-sm);
-  border: 1px solid rgba(0,0,0,0.03);
+  border: 1.5px solid var(--border-color);
   display: flex;
   flex-direction: column;
   gap: 12px;
   text-decoration: none;
-  color: inherit;
-  transition: transform 0.15s, box-shadow 0.15s;
+  color: var(--text-primary);
+  transition: transform 0.15s, box-shadow 0.15s, border-color 0.15s;
 }
 
 .card-interactive:active {
   transform: scale(0.98);
   box-shadow: var(--shadow-md);
+  border-color: var(--primary-color);
 }
 
 .card-title {
-  font-size: 15px;
-  font-weight: 700;
+  font-size: 18px;
+  font-weight: 800;
   color: var(--text-primary);
+  line-height: 1.45;
 }
 
 .card-meta {
   display: flex;
   flex-direction: column;
-  gap: 6px;
-  font-size: 13px;
+  gap: 8px;
+  font-size: 16px;
   color: var(--text-secondary);
 }
 
@@ -251,134 +315,180 @@ body {
 }
 
 .price-tag {
-  font-size: 16px;
+  font-size: 19px;
   font-weight: 800;
-  color: var(--primary-color);
+  color: var(--accent-color);
 }
 
 /* Search Bar */
 .search-container {
   display: flex;
   align-items: center;
-  background-color: #edf2f7;
-  border-radius: 20px;
-  padding: 8px 14px;
+  background-color: var(--surface-subtle);
+  border: 1.5px solid var(--border-color);
+  border-radius: var(--radius-pill);
+  padding: 4px 14px;
+  min-height: 48px;
   gap: 8px;
+}
+
+.search-container:focus-within {
+  border-color: var(--primary-color);
+  background-color: var(--bg-color);
 }
 
 .search-input {
   border: none;
   background: transparent;
   flex: 1;
-  font-size: 14px;
+  font-size: 16px;
   outline: none;
   color: var(--text-primary);
+  min-height: 40px;
+}
+
+.search-input::placeholder {
+  color: var(--text-secondary);
+  opacity: 0.75;
 }
 
 .search-clear {
   border: none;
-  background: #cbd5e0;
-  color: #fff;
-  width: 18px;
-  height: 18px;
-  border-radius: 50%;
+  background: var(--primary-color);
+  color: var(--text-on-color);
+  width: 28px;
+  height: 28px;
+  border-radius: var(--radius-pill);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 11px;
+  font-size: 14px;
+  font-weight: 700;
   cursor: pointer;
   line-height: 1;
+  flex-shrink: 0;
 }
 
 /* Filter Buttons */
 .filter-bar {
   display: flex;
   gap: 10px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+  scrollbar-width: none;
+}
+
+.filter-bar::-webkit-scrollbar {
+  display: none;
 }
 
 .filter-btn {
-  padding: 8px 16px;
-  border-radius: 20px;
-  border: 1px solid var(--border-color);
-  background-color: var(--card-bg);
-  font-size: 13px;
-  color: var(--text-secondary);
+  min-height: 44px;
+  padding: 8px 18px;
+  border-radius: var(--radius-pill);
+  border: 1.5px solid var(--border-color);
+  background-color: var(--bg-color);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-primary);
   cursor: pointer;
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 4px;
+  justify-content: center;
+  gap: 6px;
+  white-space: nowrap;
+  transition: all 0.15s;
 }
 
 .filter-btn.active {
   background-color: var(--primary-color);
-  color: #fff;
+  color: var(--text-on-color);
   border-color: var(--primary-color);
 }
 
-/* Buttons */
+/* Buttons（角を丸く、高さ44px以上、強調色 #EA5D5D） */
 .btn-primary {
   width: 100%;
-  padding: 14px;
-  background-color: var(--primary-color);
-  color: #ffffff;
+  min-height: 50px;
+  padding: 12px 24px;
+  background-color: var(--accent-color);
+  color: var(--text-on-color);
   border: none;
-  border-radius: var(--radius);
-  font-size: 15px;
-  font-weight: 700;
+  border-radius: var(--radius-pill);
+  font-size: 16px;
+  font-weight: 800;
+  letter-spacing: 0.03em;
   cursor: pointer;
   text-align: center;
   text-decoration: none;
-  display: block;
-  box-shadow: 0 4px 10px rgba(46, 125, 50, 0.25);
-  transition: background-color 0.2s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  box-shadow: var(--shadow-accent);
+  transition: background-color 0.2s, transform 0.1s;
 }
 
 .btn-primary:active {
-  background-color: var(--primary-hover);
+  background-color: var(--accent-hover);
+  transform: scale(0.98);
 }
 
 .btn-secondary {
   width: 100%;
-  padding: 12px;
-  background-color: #f1f5f9;
-  color: #475569;
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius);
-  font-size: 14px;
-  font-weight: 600;
+  min-height: 48px;
+  padding: 12px 24px;
+  background-color: var(--primary-light);
+  color: var(--text-primary);
+  border: 1.5px solid var(--primary-color);
+  border-radius: var(--radius-pill);
+  font-size: 16px;
+  font-weight: 700;
   cursor: pointer;
   text-align: center;
   text-decoration: none;
-  display: block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+.btn-secondary:active {
+  background-color: var(--border-color);
+  transform: scale(0.98);
 }
 
 .btn-danger {
-  background-color: #fee2e2;
-  color: #dc2626;
-  border: 1px solid #fca5a5;
+  background-color: #FFF0F0;
+  color: var(--accent-hover);
+  border: 1.5px solid var(--accent-color);
 }
 
-/* Form Controls */
+/* Form Controls（スマホの自動ズーム防止のため16px以上） */
 .form-group {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 8px;
 }
 
 .form-label {
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--text-secondary);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-primary);
 }
 
 .form-control {
   width: 100%;
-  padding: 12px;
-  border: 1px solid var(--border-color);
-  border-radius: 8px;
-  font-size: 14px;
-  background-color: var(--card-bg);
+  min-height: 48px;
+  padding: 12px 16px;
+  border: 1.5px solid var(--border-color);
+  border-radius: 12px;
+  font-size: 16px;
+  color: var(--text-primary);
+  background-color: var(--bg-color);
   outline: none;
+  transition: border-color 0.2s;
 }
 
 .form-control:focus {
@@ -387,21 +497,24 @@ body {
 
 textarea.form-control {
   resize: vertical;
-  min-height: 80px;
+  min-height: 100px;
+  line-height: 1.6;
 }
 
 /* Detail & Map Section */
 .detail-section {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 14px;
+  font-size: 16px;
 }
 
 .map-container {
-  height: 160px;
+  height: 180px;
   border-radius: var(--radius);
   overflow: hidden;
-  background-color: #e2e8f0;
+  background-color: var(--gray-placeholder);
+  border: 1.5px solid var(--border-color);
   position: relative;
 }
 
@@ -416,16 +529,17 @@ textarea.form-control {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 20px 0 10px 0;
+  padding: 20px 0 12px;
   gap: 10px;
 }
 
 .avatar-lg {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
+  width: 88px;
+  height: 88px;
+  border-radius: var(--radius-pill);
   overflow: hidden;
   background-color: var(--gray-placeholder);
+  border: 3px solid var(--primary-color);
 }
 
 .avatar-lg img {
@@ -435,12 +549,13 @@ textarea.form-control {
 }
 
 .user-name {
-  font-size: 18px;
-  font-weight: 700;
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--text-primary);
 }
 
 .user-email {
-  font-size: 13px;
+  font-size: 16px;
   color: var(--text-secondary);
 }
 
@@ -448,38 +563,46 @@ textarea.form-control {
 .settings-list {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 10px;
 }
 
 .setting-item {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 14px 16px;
-  background-color: var(--card-bg);
-  border-radius: 8px;
-  border: 1px solid rgba(0,0,0,0.03);
-  font-size: 14px;
-  font-weight: 500;
+  min-height: 52px;
+  padding: 14px 18px;
+  background-color: var(--bg-color);
+  border-radius: var(--radius);
+  border: 1.5px solid var(--border-color);
+  font-size: 16px;
+  font-weight: 700;
   color: var(--text-primary);
   text-decoration: none;
   cursor: pointer;
+  transition: background-color 0.15s;
+}
+
+.setting-item:active {
+  background-color: var(--primary-light);
 }
 
 .setting-item::after {
   content: "›";
-  font-size: 18px;
-  color: #a0aec0;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--primary-color);
 }
 
 /* Alert Banner */
 .alert-box {
-  background-color: #e6f4ea;
-  border: 1px solid #a7f3d0;
-  color: #065f46;
-  padding: 12px;
+  background-color: var(--primary-light);
+  border: 1.5px solid var(--primary-color);
+  color: var(--text-primary);
+  padding: 14px 16px;
   border-radius: var(--radius);
-  font-size: 13px;
-  line-height: 1.4;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.55;
   margin-bottom: 8px;
 }

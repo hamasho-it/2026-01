@@ -1,4 +1,4 @@
-// Noope (ヌープ) - Common JavaScript
+// Noope (ノープ) - Common JavaScript
 document.addEventListener("DOMContentLoaded", () => {
   // Highlight active bottom navigation based on current HTML
   const currentPath = window.location.pathname.split("/").pop() || "index.html";
@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  # Image error fallback to gray placeholder
+  // Image error fallback to gray placeholder
   const images = document.querySelectorAll("img");
   images.forEach(img => {
     img.addEventListener("error", function() {
